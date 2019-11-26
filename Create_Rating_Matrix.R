@@ -1,8 +1,5 @@
-# source("Read Files of Movies.R")
-# 
-# library(recommenderlab)
-# 
-# ratings_matrix <- as(ReadFiles()$Ratings[,1:3],"realRatingMatrix")
+#' Esta función duvuelve la Matriz (Matrix Raitings) como un objeto de 
+#' tipo realRatingsMatrix 
 
 Create_Ratings_Matrix <- function(){
         source("Read Files of Movies.R")
@@ -11,4 +8,4 @@ Create_Ratings_Matrix <- function(){
         return(ratings_matrix)
 }
 
-# ratings_matrix <- Create_Ratings_Matrix()
+
