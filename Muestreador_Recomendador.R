@@ -75,6 +75,3 @@ Recomendar_Pelicula <- function(recomendador, semilla, n, estrellas){
         top5_movies_ordenados
         
 }
-
-# Ejemplo
-Recomendar_Pelicula(SVD_aprox, 3989, 3, c(4,4.5,5))
