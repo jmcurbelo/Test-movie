@@ -67,12 +67,10 @@ Recomendar_Pelicula <- function(recomendador, nombre){
     
     top5_movies_ordenados$ratings <- ratings_list
     
-    print("En base a la elección y los Ratings de estas películas")
-    print("")
-    print(prueba)
-    print("")
-    print("Las recomendaciones para ud según sus gustos son:")
-    print(top5_movies_ordenados)
+    # print("")
+    # print("Las recomendaciones para ud según sus gustos son:")
+    # print(top5_movies_ordenados)
+    return(top5_movies_ordenados)
     
     
     ###########################################3
@@ -104,6 +102,10 @@ shinyServer(function(input, output) {
     
 
     output$peliculas <- renderPrint(print(prediccion()))
+    
+   
+    
+ 
 
 
 })
