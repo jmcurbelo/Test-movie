@@ -101,9 +101,11 @@ shinyServer(function(input, output) {
     
     
 
-    output$peliculas <- renderPrint(print(prediccion()))
+    # output$peliculas <- renderPrint(print(prediccion()))
     
-   
+    output$tabla <- renderTable({
+        prediccion()[,2]
+    }, colnames = FALSE)
     
  
 
