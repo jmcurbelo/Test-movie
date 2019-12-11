@@ -54,18 +54,16 @@ dashboardPage(skin = "blue",
             tabItem(tabName = "Recom",
                     h2("Recomendaciones"),
                     verbatimTextOutput("peliculas")
+                  
+                    
+                  
+                    
             )
         )
     )
 )
 
 
-# wellPanel(
-#     selectInput(inputId = "pelicula1", label = "seleccionar pelicula",
-#                 choices = c("op1","op2","op3")),
-#     selectInput(inputId = "pelicula2", label = "seleccionar pelicula",
-#                 choices = c("op1","op2","op3"))
-# )
 
 
 
@@ -82,24 +80,3 @@ dashboardPage(skin = "blue",
 
 
 
-# shinyUI(fluidPage(
-# 
-#     # Application title
-#     titlePanel("Old Faithful Geyser Data"),
-# 
-#     # Sidebar with a slider input for number of bins
-#     sidebarLayout(
-#         sidebarPanel(
-#             sliderInput("bins",
-#                         "Number of bins:",
-#                         min = 1,
-#                         max = 50,
-#                         value = 30)
-#         ),
-# 
-#         # Show a plot of the generated distribution
-#         mainPanel(
-#             plotOutput("distPlot")
-#         )
-#     )
-# ))
