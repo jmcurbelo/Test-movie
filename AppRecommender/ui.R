@@ -52,8 +52,15 @@ dashboardPage(skin = "blue",
             
             # Second tab content
             tabItem(tabName = "Recom",
-                    h2("Recomendaciones"),
-                    verbatimTextOutput("peliculas")
+                    # h2("Recomendaciones"),
+                    # verbatimTextOutput("peliculas"),
+                    fluidRow(
+                        box(title = "Recomendaciones", status = "info",
+                            solidHeader = TRUE,
+                            tableOutput("tabla")
+                            
+                        )
+                    )
                   
                     
                   
