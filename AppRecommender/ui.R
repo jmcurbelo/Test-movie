@@ -4,11 +4,11 @@ library(shinydashboard)
 
 load(file = "./titulos.rda")
 
-dashboardPage(
+dashboardPage(skin = "blue",
     dashboardHeader(title = "Recomendador"),
     dashboardSidebar(
         
-        sidebarMenu(
+        sidebarMenu(img(src="infomedia.png", width=232, height=40),
             menuItem("Seleccionar Película", tabName = "Sel_pel", icon = icon("list")),
             menuItem("Recomendaciones", tabName = "Recom", icon = icon("thumbs-up", lib = "glyphicon"))
         )
