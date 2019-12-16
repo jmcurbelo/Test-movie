@@ -10,7 +10,8 @@ Seleccionar_Peliculas <- function(ids){
         library(dplyr)
         muestra <- movies %>%
                 filter( (movieId == ids[1]) | (movieId == ids[2]) |
-                                (movieId == ids[3]) )
+                                (movieId == ids[3]) | (moviesId == ids[4]) |
+                                moviesId == ids[5])
         return(muestra)
         
 }
@@ -31,6 +32,8 @@ Recomendar_Pelicula <- function(recomendador, ids){
         matriz[1,which(moviesId==prueba$movieId[1])]<- 5
         matriz[1,which(moviesId==prueba$movieId[2])]<- 5
         matriz[1,which(moviesId==prueba$movieId[3])]<- 4.9999
+        matriz[1,which(moviesId==prueba$movieId[4])]<- 5
+        matriz[1,which(moviesId==prueba$movieId[5])]<- 5
         
         rating_prueba <- as(matriz, "realRatingMatrix")
         
