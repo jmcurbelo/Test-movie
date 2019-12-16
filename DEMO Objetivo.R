@@ -86,16 +86,4 @@ Recomendar_Pelicula <- function(recomendador, ids){
 
 }
 
-########################33
-# recomendadores
-
-recomendadores <- readRDS("./Recomendadores/Recomendadores.RDS")
-
-
-SVD_aprox <- recomendadores$SVD_aprox
-IBCB <- recomendadores$IBCF
-UBCF <- recomendadores$UBCF
-POPULAR <- recomendadores$POPULAR
-RANDOM <- recomendadores$RANDOM
-ALS_implicit <- recomendadores$ALS_implicit
 
