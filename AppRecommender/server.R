@@ -8,6 +8,7 @@ moviesId <- movies$movieId
 # Esta cargando como SVD_aprox
 # load(file = "./recom.rda")
 load(file = "./SVD_aprox2.rda")
+load(file = "./UBCF.rda")
 ##############################
 
 
@@ -103,7 +104,9 @@ shinyServer(function(input, output) {
     
     observeEvent(input$add, {rv$data <- append(rv$data, input$peliculas, after = length(rv$data))})
     
-    observeEvent(input$borrar, {rv$data <- c()})
+    observeEvent(input$borrar, {rv$data <- rv$data[-length(rv$data)]})
+    
+    observeEvent(input$borrarTodo, {rv$data <- c()})
     
     # prediccion <- reactive({
     #     Recomendar_Pelicula(recomendador = SVD_aprox, pelis())
@@ -112,7 +115,13 @@ shinyServer(function(input, output) {
     output$seleccion <- renderTable({rv$data}, colnames = FALSE)
     
     prediccion <- reactive({
-        Recomendar_Pelicula(recomendador = SVD_aprox, rv$data)
+        algo <- switch( input$algoritmo,
+                       UBCF = Recomendar_Pelicula(recomendador = UBCF, rv$data),
+                       SVD = Recomendar_Pelicula(recomendador = SVD_aprox, rv$data)
+                        
+            
+        )
+        
     })
     
     
