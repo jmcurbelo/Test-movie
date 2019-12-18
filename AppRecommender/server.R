@@ -95,11 +95,6 @@ Recomendar_Pelicula <- function(recomendador, nombre){
 
 shinyServer(function(input, output) {
     
-    
-    # pelis <- reactive({
-    #     c(input$pelicula1, input$pelicula2, input$pelicula3)
-    # })
-    
     rv <- reactiveValues(data = c())
     
     observeEvent(input$add, {rv$data <- append(rv$data, input$peliculas, after = length(rv$data))})
@@ -107,10 +102,6 @@ shinyServer(function(input, output) {
     observeEvent(input$borrar, {rv$data <- rv$data[-length(rv$data)]})
     
     observeEvent(input$borrarTodo, {rv$data <- c()})
-    
-    # prediccion <- reactive({
-    #     Recomendar_Pelicula(recomendador = SVD_aprox, pelis())
-    # })
     
     output$seleccion <- renderTable({rv$data}, colnames = FALSE)
     
@@ -123,10 +114,6 @@ shinyServer(function(input, output) {
         )
         
     })
-    
-    
-
-    # output$peliculas <- renderPrint(print(prediccion()))
     
     output$tabla <- renderTable({
         prediccion()[,2]
