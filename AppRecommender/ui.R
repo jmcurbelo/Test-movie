@@ -55,6 +55,12 @@ dashboardPage(skin = "blue",
                             selectInput(inputId = "peliculas", label = "",
                                         choices = titulos),
                             actionButton(inputId = "add", label = "Agregar Película", icon = icon("calendar-plus"))
+                        ),
+                        box(
+                            title = "Seleccione el algoritmo",
+                            background = "blue",
+                            radioButtons(inputId = "algoritmo", label = "",
+                                               choices = list("UBCF"="UBCF","SVD"="SVD"))
                         )
                     ),
                     fluidRow(
@@ -63,7 +69,8 @@ dashboardPage(skin = "blue",
                             background = "blue",
                             solidHeader = TRUE,
                             tableOutput("seleccion"),
-                            actionButton(inputId = "borrar", label = "Borrar selección", icon = icon("backspace"))
+                            actionButton(inputId = "borrar", label = "Borrar selección", icon = icon("backspace")),
+                            actionButton(inputId = "borrarTodo", label = "Borrar todo", icon = icon("ban"))
                         )
                         
                     )
