@@ -170,6 +170,8 @@ server = function(input, output, session) {
       lista_new$titulo <- gsub("\\s*\\([^\\)]+\\)","",as.character(lista_new$titulo))
       lista_new$titulo <- gsub(",.*$", "", lista_new$titulo)
       
+      incProgress(0.2)
+      
       # Se buscan 20 películas en IMDB. Sus atributos se guardan en el dataframe pelis_df
       rv$pelis_df <- data.frame()
       i <- 1
@@ -223,7 +225,7 @@ server = function(input, output, session) {
         
         
         
-        incProgress(0.2)
+        # incProgress(0.2)
         
         
         
@@ -357,7 +359,10 @@ server = function(input, output, session) {
       # Muestra la tabla con las películas recomendadas
       output$pelis_rec <- DT::renderDataTable({
         DT::datatable(rv$pelis_df, rownames= FALSE, options = list(searching = FALSE, pageLength = 20))
-      }, server = TRUE) 
+      }, server = TRUE)
+      
+      
+      updateTabsetPanel(session, "tabs", selected = "Recomendaciones")
       
       
       
