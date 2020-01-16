@@ -480,6 +480,7 @@ server = function(input, output, session) {
       }, server = TRUE)
       
       
+      updateTabsetPanel(session, "tabs", selected = "Recomendaciones")
       
       setProgress(1)
       
